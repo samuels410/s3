@@ -3,7 +3,7 @@
 development:
   apps4: none
   announcements: none
-  dev_webserver: passenger
+  dev_webserver: thin
   prod_webserver: passenger
   database: postgresql
   templates: erb
@@ -16,7 +16,7 @@ development:
   omniauth_provider: 
   authorization: roles
   form_builder: 
-  pages: about
+  pages: users
   layouts: 
   locale: 
   analytics: 
