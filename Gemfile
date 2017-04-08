@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
+# ruby '2.3.1'
 gem 'rails', '~> 5.0.0'
 gem 'puma', '~> 3.0'
 gem 'uglifier', '>= 1.3.0'
@@ -27,9 +27,11 @@ gem 'devise_invitable'
 gem 'pg'
 group :development do
   gem 'better_errors'
-  gem 'capistrano', '~> 3.0.1'
+  gem 'capistrano'
+  gem 'capistrano-rails'
   gem 'capistrano-bundler'
-  gem 'capistrano-rails', '~> 1.1.0'
+  gem 'capistrano-passenger'
+  # gem 'capistrano3-delayed-job', '~> 1.0'
   gem 'capistrano-rails-console'
   gem 'capistrano-rvm', '~> 0.1.1'
   gem 'hub', :require=>nil
@@ -46,3 +48,6 @@ gem "paperclip", "~> 5.0.0"
 gem 'will_paginate-bootstrap'
 gem 'rubyzip'
 gem 'simple_form'
+
+gem 'execjs'
+gem 'therubyracer'

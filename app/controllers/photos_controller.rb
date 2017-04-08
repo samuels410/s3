@@ -1,17 +1,18 @@
 class PhotosController < ApplicationController
   require 'zip'
   before_action :authenticate_user!
-  @@per_page = 5
+  @@per_page = 50
 
   def upload_photos
     params['Photo'][:photos].each do |photo|
       photo = Photo.create(image: photo,user_id: current_user.id)
     end
+    flash[:notice] = "The photos uploaded successfully"
     redirect_to photos_path
   end
 
   def index
-    @photos = Photo.all.order('created_at DESC' ).paginate( :page => params[:page] || 1, :per_page => @@per_page )
+    @photos = Photo.active.order('created_at ASC' ).paginate( :page => params[:page] || 1, :per_page => @@per_page )
     @photo = Photo.name
   end
 
@@ -27,7 +28,7 @@ class PhotosController < ApplicationController
       page_no = 1
     end
 
-      @photos = Photo.all.paginate( :page => page_no, :per_page => @@per_page )
+      @photos = Photo.active.paginate( :page => page_no, :per_page => @@per_page )
 
       #Attachment name
       filename = "photos-#{page_no}.zip"
@@ -58,6 +59,13 @@ class PhotosController < ApplicationController
         temp_file.close
         temp_file.unlink
       end
+  end
+
+  def destroy
+    photo = Photo.where(id: params[:id]).first
+    photo.update_attributes(workflow_state: "deleted")
+    flash[:notice] = "The photo deleted successfully"
+    redirect_to photos_path
   end
 
 end
