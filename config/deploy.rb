@@ -4,7 +4,7 @@ lock "3.8.0"
 set :application, 's3'
 set :repo_url, 'https://github.com/samuels410/s3'
 set :deploy_to, '/var/deploy/capistrano/s3'
-set :passenger_user, 'canvasuser'
+set :passenger_user, 'www-data'
 set :pty, true
 set :linked_files, %w{config/database.yml config/secrets.yml}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
