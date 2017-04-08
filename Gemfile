@@ -51,3 +51,4 @@ gem 'simple_form'
 
 gem 'execjs'
 gem 'therubyracer'
+gem 'rails-gallery'

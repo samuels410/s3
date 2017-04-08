@@ -18,19 +18,33 @@
     <div class="row">
       <% @photos.each do |photo| %>
         <div class="col-xs-3" >
-          <a href="<%= download_photo_path(photo.id)%>" class="thumbnail">
-            <%= image_tag photo.image.url(:thumb) ,style: "width: 250px;height: 167px"%>
-            <small> <i>
+          <div class="thumbnail">
+            <span href="<%= download_photo_path(photo.id)%>"  class="image-panel" >
+              <%= image_tag photo.image.url(:thumb) ,style: "width: 250px;height: 167px"%>
+            </span>
+            <small><i>
             <%= photo.image_file_name %>, by  <%= photo.user.try(:name) %>
             </i>
             </small>
+            <a href="<%= download_photo_path(photo.id)%>" style="float: right;padding-top: 3px;">
+              <span class="glyphicon glyphicon-download"></span>
+            </a>
             <% if photo.user_id == current_user.id %>
-              <a href="/photos/<%= photo.id %>" data-confirm="Are you sure?" data-method="delete">Delete</a>
+              <a href="/photos/<%= photo.id %>" data-confirm="Are you sure?" data-method="delete" style="float: right;padding-top: 3px;padding-right: 4px;color: red;">
+                <span class="glyphicon glyphicon-remove-circle"></span>
+              </a>
             <% end  %>
-          </a>
+          </div>
         </div>
       <% end  %>
     </div>
     <center><%= will_paginate @photos, renderer: BootstrapPagination::Rails %></center>
 
   </div>
+<script>
+    $(function(){
+
+        // Initialize the gallery
+        $('.image-panel').touchTouch();
+
+    });</script>

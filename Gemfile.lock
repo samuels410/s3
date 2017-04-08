@@ -119,6 +119,7 @@ GEM
     ffi (1.9.18)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    hashie (3.5.5)
     hub (1.12.4)
     i18n (0.8.1)
     interception (0.5)
@@ -208,6 +209,9 @@ GEM
     rails-dom-testing (2.0.2)
       activesupport (>= 4.2.0, < 6.0)
       nokogiri (~> 1.6)
+    rails-gallery (0.3.3)
+      hashie (>= 2.0.0)
+      rails (>= 3.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     rails_layout (1.0.34)
@@ -323,6 +327,7 @@ DEPENDENCIES
   pry-rescue
   puma (~> 3.0)
   rails (~> 5.0.0)
+  rails-gallery
   rails_layout
   rubocop
   rubyzip

@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+@import 'gallery/responsive/elastislide';
+@import 'gallery/responsive';
+@import 'gallery/slideshow';
+@import 'gallery/galleria/classic';
+@import 'gallery/touch_touch';
