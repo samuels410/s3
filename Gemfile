@@ -19,7 +19,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'administrate'
 gem 'bootstrap-sass', '~> 3.3.6'
-gem 'sass-rails', '>= 3.2'
+gem 'sass-rails', '~> 5.0.4'
 
 gem 'bourbon'
 gem 'devise'
@@ -41,3 +41,8 @@ group :development, :test do
   gem 'rubocop'
   gem 'thin'
 end
+
+gem "paperclip", "~> 5.0.0"
+gem 'will_paginate-bootstrap'
+gem 'rubyzip'
+gem 'simple_form'

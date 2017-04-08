@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12" >
+      <div class='well'>
+        Share photos
+
+        <%= form_for @photo, url: upload_photos_photos_path(@photo), html: { multipart: true } do |f| %>
+            <%= f.file_field :photos, accept: 'image/png,image/jpeg,image/gif', multiple: true %>
+            <br>
+            <%= f.submit "Submit" %>
+        <% end %>
+      </div>
+    </div>
+</div>
+
+  <a href="<%= download_zip_photos_path(query_params: request.query_parameters) %>">Download all photos in the page</a>
+  <hr>
+    <div class="row">
+      <% @photos.each do |photo| %>
+        <div class="col-xs-3" >
+          <a href="<%= download_photo_path(photo.id)%>" class="thumbnail">
+            <%= image_tag photo.image.url(:thumb) ,style: "width: 250px;height: 167px"%>
+            <small> <i>
+            <%= photo.image_file_name %>, by  <%= photo.user.try(:name) %>
+            </i>
+            </small>
+          </a>
+        </div>
+      <% end  %>
+    </div>
+    <center><%= will_paginate @photos, renderer: BootstrapPagination::Rails %></center>
+
+  </div>
