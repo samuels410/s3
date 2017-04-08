@@ -172,3 +172,7 @@
 #prevArrow, #nextArrow {
   background: url(/gallery/touch_touch/arrows.png) no-repeat !important;
 }
+
+#nextArrow {
+  background-position: right top !important;
+}
