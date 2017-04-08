@@ -22,10 +22,9 @@
             <span href="<%= download_photo_path(photo.id)%>"  class="image-panel" >
               <%= image_tag photo.image.url(:thumb) ,style: "width: 250px;height: 167px"%>
             </span>
-            <small><i>
-            <%= photo.image_file_name %>, by  <%= photo.user.try(:name) %>
-            </i>
-            </small>
+            <span style="font-size: 85%;word-wrap: break-word;">
+              <%= photo.image_file_name %>, by  <%= photo.user.try(:name) %>
+            </span>
             <a href="<%= download_photo_path(photo.id)%>" style="float: right;padding-top: 3px;">
               <span class="glyphicon glyphicon-download"></span>
             </a>
