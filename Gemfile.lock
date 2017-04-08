@@ -75,6 +75,8 @@ GEM
     capistrano-bundler (1.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
+    capistrano-passenger (0.2.0)
+      capistrano (~> 3.0)
     capistrano-rails (1.1.0)
       capistrano (>= 3.0.0)
       capistrano-bundler (>= 1.0.0)
@@ -290,9 +292,10 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   bourbon
   byebug
-  capistrano (~> 3.0.1)
+  capistrano
   capistrano-bundler
-  capistrano-rails (~> 1.1.0)
+  capistrano-passenger
+  capistrano-rails
   capistrano-rails-console
   capistrano-rvm (~> 0.1.1)
   coffee-rails (~> 4.2)
