@@ -164,3 +164,11 @@
 .alert {
   margin: -21px -70px 21px -70px;
 }
+
+#gallerySlider .placeholder {
+  background: url(/gallery/touch_touch/preloader.gif) no-repeat center center;
+}
+
+#prevArrow, #nextArrow {
+  background: url(/gallery/touch_touch/arrows.png) no-repeat;
+}
