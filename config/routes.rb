@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :users
     root to: "photos#index"
   end
-  root to: "photos#index"
+  root to: "visitors#index"
   devise_for :users
   resources :users
   resources :photos do

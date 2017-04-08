@@ -21,21 +21,34 @@
       <!-- Set the first background image using inline CSS below. -->
       <div class="fill" style="background-image:url('image/background1.JPG');"></div>
       <div class="carousel-caption">
-        <h2><a href="/users/sign_up">Sign up</a> to see more photos</h2>
+        <h2><% if user_signed_in? %>
+              <a href="/photos#index">Click here</a>
+          <%else%>
+              <a href="/users/sign_up">Sign up</a>
+          <%end%> to see more photos</h2>
       </div>
     </div>
     <div class="item">
       <!-- Set the second background image using inline CSS below. -->
       <div class="fill" style="background-image:url('image/background2.JPG');"></div>
       <div class="carousel-caption">
-        <h2><a href="/users/sign_up">Sign up</a> to see more photos</h2>
+        <h2><% if user_signed_in? %>
+              <a href="/photos#index">Click here</a>
+          <%else%>
+              <a href="/users/sign_up">Sign up</a>
+          <%end%> to see more photos</h2>
       </div>
     </div>
     <div class="item">
       <!-- Set the third background image using inline CSS below. -->
       <div class="fill" style="background-image:url('image/background3.JPG');"></div>
       <div class="carousel-caption">
-        <h2><a href="/users/sign_up">Sign up</a> to see more photos</h2>
+        <h2><% if user_signed_in? %>
+                <a href="/photos#index">Click here</a>
+              <%else%>
+                <a href="/users/sign_up">Sign up</a>
+              <%end%>
+              to see more photos</h2>
       </div>
     </div>
   </div>
