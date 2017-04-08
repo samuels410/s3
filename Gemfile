@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
+# ruby '2.3.1'
 gem 'rails', '~> 5.0.0'
 gem 'puma', '~> 3.0'
 gem 'uglifier', '>= 1.3.0'
@@ -48,3 +48,6 @@ gem "paperclip", "~> 5.0.0"
 gem 'will_paginate-bootstrap'
 gem 'rubyzip'
 gem 'simple_form'
+
+gem 'execjs'
+gem 'therubyracer'
