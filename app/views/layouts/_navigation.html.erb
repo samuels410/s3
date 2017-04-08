@@ -1,19 +1,14 @@
 <%# navigation styled for Bootstrap 4.0 %>
-<div class="container">
-  <nav class="navbar navbar-dark bg-inverse">
-    <ul class="nav navbar-nav clearfix">
-      <li class="nav-item">
-        <button class="navbar-toggler hidden-sm-up nav-link" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-          &#9776;
-        </button>
-      </li>
-    </ul>
-    <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-      <%= link_to "Rails bootstrap", root_path, class: 'navbar-brand' %>
-      <ul class="nav navbar-nav">
-        <%= render 'layouts/navigation_links' %>
-        <%= render 'layouts/nav_links_for_auth' %>
-      </ul>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div style="text-align: center;float:left;">
+      <img style="width:60px" src="/s3logo.png"/>
     </div>
-  </nav>
-</div>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Society for Social Silliness</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <%= render 'layouts/nav_links_for_auth' %>
+    </ul>
+  </div>
+</nav>
