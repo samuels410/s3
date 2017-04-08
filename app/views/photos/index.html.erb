@@ -24,6 +24,9 @@
             <%= photo.image_file_name %>, by  <%= photo.user.try(:name) %>
             </i>
             </small>
+            <% if photo.user_id == current_user.id %>
+              <a href="/photos/<%= photo.id %>" data-confirm="Are you sure?" data-method="delete">Delete</a>
+            <% end  %>
           </a>
         </div>
       <% end  %>

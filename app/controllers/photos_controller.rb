@@ -7,6 +7,7 @@ class PhotosController < ApplicationController
     params['Photo'][:photos].each do |photo|
       photo = Photo.create(image: photo,user_id: current_user.id)
     end
+    flash[:notice] = "The photos uploaded successfully"
     redirect_to photos_path
   end
 
@@ -58,6 +59,12 @@ class PhotosController < ApplicationController
         temp_file.close
         temp_file.unlink
       end
+  end
+
+  def destroy
+    Photo.destroy(params[:id])
+    flash[:notice] = "The photo deleted successfully"
+    redirect_to photos_path
   end
 
 end
