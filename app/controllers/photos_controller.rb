@@ -12,7 +12,7 @@ class PhotosController < ApplicationController
   end
 
   def index
-    @photos = Photo.active.order('created_at ASC' ).paginate( :page => params[:page] || 1, :per_page => @@per_page )
+    @photos = Photo.active.order('created_at DESC' ).paginate( :page => params[:page] || 1, :per_page => @@per_page )
     @photo = Photo.name
   end
 
