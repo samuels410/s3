@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
   require 'zip'
   before_action :authenticate_user!
-  @@per_page = 50
+  @@per_page = 52
 
   def upload_photos
     params['Photo'][:photos].each do |photo|

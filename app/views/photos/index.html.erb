@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12" >
       <div class='well'>
-        Share photos
+        Share photos ( press ctrl for attach multiple photos )
 
         <%= form_for @photo, url: upload_photos_photos_path(@photo), html: { multipart: true } do |f| %>
             <%= f.file_field :photos, accept: 'image/png,image/jpeg,image/gif', multiple: true %>
