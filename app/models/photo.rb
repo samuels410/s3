@@ -5,4 +5,12 @@ class Photo < ApplicationRecord
   validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
   belongs_to :user
 
+  scope :active, -> {
+    where(:workflow_state => 'active')
+  }
+
+  scope :deleted, -> {
+    where(:workflow_state => 'deleted')
+  }
+
 end
