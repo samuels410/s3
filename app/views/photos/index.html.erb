@@ -7,7 +7,7 @@
         <%= form_for @photo, url: upload_photos_photos_path(@photo), html: { multipart: true } do |f| %>
             <%= f.file_field :photos, accept: 'image/png,image/jpeg,image/gif', multiple: true %>
             <br>
-            <%= f.submit "Submit" %>
+            <%= f.submit "Submit", :disabled => true %>
         <% end %>
       </div>
     </div>
@@ -46,5 +46,15 @@
 
         // Initialize the gallery
         $('.image-panel').touchTouch();
+
+        $('input:file').change(
+            function(){
+                if ($(this).val()) {
+                    $('input:submit').attr('disabled',false);
+                    // or, as has been pointed out elsewhere:
+                    // $('input:submit').removeAttr('disabled');
+                }
+            }
+        );
 
     });</script>
