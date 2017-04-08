@@ -166,9 +166,9 @@
 }
 
 #gallerySlider .placeholder {
-  background: url(/gallery/touch_touch/preloader.gif) no-repeat center center;
+  background: url(/gallery/touch_touch/preloader.gif) no-repeat center center !important;
 }
 
 #prevArrow, #nextArrow {
-  background: url(/gallery/touch_touch/arrows.png) no-repeat;
+  background: url(/gallery/touch_touch/arrows.png) no-repeat !important;
 }
